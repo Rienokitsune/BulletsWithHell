@@ -15,4 +15,4 @@ MonoBehaviour:
   shotDelaySequence:
   - 2
   config: {fileID: 11400000, guid: 55b73b1024db5b244bbaf2108059c818, type: 2}
-  numOfBullets: 7
+  numOfBullets: 8
