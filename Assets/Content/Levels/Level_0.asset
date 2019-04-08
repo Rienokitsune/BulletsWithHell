@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cb6421be7983f47b01569c5e144055, type: 3}
+  m_Name: Level_0
+  m_EditorClassIdentifier: 
+  Level_ID: Level_0
+  script: {fileID: 114044166050985034}
+  data: {fileID: 114196888586605396}
+  saveData: {fileID: 114947537310485192}
+--- !u!114 &114044166050985034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97c6397d5041ed46bf48333cdf0273a, type: 3}
+  m_Name: Level_0_script
+  m_EditorClassIdentifier: 
+  configs:
+  - {fileID: 11400000, guid: 8f949f9b024831f44832c01ffe694b79, type: 2}
+  - {fileID: 11400000, guid: 931d682a73de0e74990928660346359d, type: 2}
+  - {fileID: 11400000, guid: e8c75fdb4d53de3489719bfdc1e268bf, type: 2}
+  - {fileID: 11400000, guid: dbd9f99b03f247d44a593110c00be6dd, type: 2}
+  - {fileID: 11400000, guid: 6d6985c7af77e9348b7f5fb352c745ce, type: 2}
+  - {fileID: 11400000, guid: dbd9f99b03f247d44a593110c00be6dd, type: 2}
+  - {fileID: 11400000, guid: 931d682a73de0e74990928660346359d, type: 2}
+  timestamps:
+  - 2
+  - 5
+  - 10
+  - 15
+  - 23
+  - 30
+  - 36
+--- !u!114 &114196888586605396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710d4101061bba346bd4dafdb32e4a3d, type: 3}
+  m_Name: Level_0_data
+  m_EditorClassIdentifier: 
+  Level_ID: Level_0
+--- !u!114 &114947537310485192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74985fabc4a07474f8254967d590f261, type: 3}
+  m_Name: Level_0_save
+  m_EditorClassIdentifier: 
+  Level_ID: Level_0
+  topScore: 666
+  topTime: 5
+  goalChecks: 0101000100
