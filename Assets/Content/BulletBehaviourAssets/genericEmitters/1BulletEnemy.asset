@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotDelaySequence:
   - 0.468
-  config: {fileID: 11400000, guid: 5f55184427225bd40b1600da8564b6a8, type: 2}
+  config: {fileID: 11400000, guid: 7fc777066f674e2478b8f94d08fa16f8, type: 2}
   coneAngle: 0
   numOfBullets: 1
   offsetZ: 0
