@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     
     void Start()
     {
-        
+        healthConfig.ResetHealth();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
