@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBullet : Bullet
 {
 
-    [SerializeField]public int damage;
+    public int damage;
 
     public override void Update()
     {
@@ -13,5 +13,10 @@ public class PlayerBullet : Bullet
         Timer += Time.deltaTime;
         rb.velocity = -transform.up * speedOverTime.Evaluate(time: 0);
 
+    }
+
+    public void SetDamage(int dmg)
+    {
+        damage = dmg;
     }
 }

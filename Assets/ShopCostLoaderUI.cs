@@ -69,28 +69,4 @@ public class ShopCostLoaderUI : MonoBehaviour
     }
 
 
-    /*
-     * if(upgrade.cost[upgrade.currentLevel] > shop.data.getSP())
-                {
-                    button.interactable = false;
-                    cost.text = upgrade.cost[upgrade.currentLevel-1].ToString();
-                    
-                    level.text = upgrade.currentLevel.ToString();
-                }
-                else
-                {
-                    if(upgrade.cost.Length >= upgrade.currentLevel  )
-                    {
-                        button.interactable = true;
-                        cost.text = upgrade.cost[upgrade.currentLevel].ToString();
-                        level.text = upgrade.currentLevel.ToString();
-                    }
-                    else
-                    {
-                        button.interactable = false;
-                        cost.text = "MAX";
-                        level.text = (upgrade.currentLevel).ToString();
-                    }
-                    
-                }*/
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-[CreateAssetMenu(fileName = "BulletBehaviour", menuName = "SaveDataObjects/PlayerData", order = 1)]
+[CreateAssetMenu(fileName = "playerData", menuName = "SaveDataObjects/PlayerData", order = 1)]
 public class PlayerData : ScriptableObject, ISaveData,ILoadData
 {
     public static PlayerData _PlayerData;
@@ -25,6 +25,17 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
         public void levelUP()
         {
             level += 1;
+        }
+    }
+    [System.Serializable]
+    public class WeaponSlotData
+    {
+        public int slotID;
+        [SerializeField] public GameObject WeaponPrefab;
+
+        public void SetWeaponSlot(GameObject Weapon)
+        {
+            WeaponPrefab = Weapon;
         }
     }
 
