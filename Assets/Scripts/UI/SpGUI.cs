@@ -14,7 +14,7 @@ public class SpGUI : MonoBehaviour
     {
         while (true)
         {
-            text.text = data.getSP();
+            text.text = data.getSP().ToString();
             yield return new WaitForSeconds(0.5f);        
         }
         

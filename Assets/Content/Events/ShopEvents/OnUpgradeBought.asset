@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9f574d529b70504e8f0c406e7f3a03b, type: 3}
-  m_Name: ShipUpgrade
+  m_Script: {fileID: 11500000, guid: 67b28f2092a88cc4294cee75c6e3cfa7, type: 3}
+  m_Name: OnUpgradebought
   m_EditorClassIdentifier: 
-  HealthLevel: 1
-  FireRateLevel: 1
-  BulletDamageLevel: 1
-  BulletNumLevel: 1
-  AttractorLevel: 1
-  Sp: 0

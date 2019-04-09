@@ -8,13 +8,41 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
 {
     public static PlayerData _PlayerData;
 
-    [SerializeField] int HealthLevel;
-    [SerializeField] int FireRateLevel;
-    [SerializeField] int BulletDamageLevel;
-    [SerializeField] int BulletNumLevel;
-    [SerializeField] int AttractorLevel;
+    [System.Serializable]
+    public class PlayerUpgradeData
+    {
+        [SerializeField]public UpgradeTypes.UpgradeType type;
+        [SerializeField] int level;
+
+        public int GetLevel()
+        {
+            return level;
+        }
+        public void LoadDefault()
+        {
+            level = 1;
+        }
+        public void levelUP()
+        {
+            level += 1;
+        }
+    }
+
+    [SerializeField]public PlayerUpgradeData[] playerUpgrades;
     [SerializeField] int Sp;
 
+    public int GetLevel(UpgradeTypes.UpgradeType type)
+    {
+        foreach (PlayerUpgradeData data in playerUpgrades)
+        {
+            if(data.type == type)
+            {
+                return data.GetLevel();
+            }
+        }
+
+        return 0;
+    }
 
     [Button(Name = "LoadData")]
     public void Load()
@@ -26,23 +54,16 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
 
                 ES3.LoadInto<PlayerData>("PlayerData", "SaveData", this);
 
-                Debug.Log("PlayerDataLoaded " +
-                     ", HealthLevel: " + HealthLevel +
-                     ", FireRateLevel: " + FireRateLevel +
-                     ", BulletDamageLevel:" + BulletDamageLevel +
-                     ", BulletNumLevel: " + BulletNumLevel +
-                     ", AttractorLevel: " + AttractorLevel +
-                     ", Sp: " + Sp);
+                Debug.Log(" Sp:"  + Sp);
             }
 
         }
         else
         {
-            HealthLevel = 1;
-            FireRateLevel = 1;
-            BulletDamageLevel = 1;
-            BulletNumLevel = 1;
-            AttractorLevel = 1;
+            foreach (PlayerUpgradeData data in playerUpgrades)
+            {
+                data.LoadDefault();
+            }
             Sp = 0;
             ES3.Save<PlayerData>("PlayerData", this, "SaveData");
             Debug.Log("SaveData File Not found, PlayerData key created and loaded default values");
@@ -53,17 +74,31 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
     public void Save()
     {
         ES3.Save<PlayerData>("PlayerData", this, "SaveData");
-        Debug.Log("PlayerDataSaved "+ ", HealthLevel: " + HealthLevel + ", FireRateLevel: " + FireRateLevel + ", BulletDamageLevel:" + BulletDamageLevel + ", BulletNumLevel: " + BulletNumLevel + ", AttractorLevel: " + AttractorLevel + ", Sp: " + Sp);
+        foreach (PlayerUpgradeData data in playerUpgrades)
+        {
+            Debug.Log("saved: " + data.GetLevel());
+        }
     }
 
-    public string getSP()
+    public int getSP()
     {
-        return Sp.ToString();
+        return Sp;
+    }
+
+    public void SubtractSP(int cost)
+    {
+        Sp -= cost;
     }
 
     private void OnEnable()
     {
         _PlayerData = this;        
+    }
+
+    [Button]
+    void Add1000Sp()
+    {
+        Sp += 1000;
     }
 
 }
