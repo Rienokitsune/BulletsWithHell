@@ -2,37 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class WeaponSlot : MonoBehaviour,IDropHandler
 {
+
+    [SerializeField] WeaponType type;
+    [SerializeField] Image weaponSprite;
+
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount == 0)
-        {
-            eventData.pointerDrag.transform.position = this.transform.position;
-            eventData.pointerDrag.transform.SetParent(transform);
-
-        }
-        else
-        {
-            Transform item = transform.GetChild(0);
-            item.SetParent(eventData.pointerDrag.GetComponent<WeaponDraggableUI>().GetLastPos());
-            item.position = eventData.pointerDrag.GetComponent<WeaponDraggableUI>().GetLastPos().position;
-            eventData.pointerDrag.transform.position = this.transform.position;
-            eventData.pointerDrag.transform.SetParent(transform);
-
-        }
+        type = eventData.pointerDrag.GetComponent<WeaponDraggableUI>().GetWeaponType();
+        weaponSprite.sprite = type.WeaponSprite;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
+      
 }

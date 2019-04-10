@@ -9,9 +9,11 @@ public class WeaponDraggableUI : MonoBehaviour, IBeginDragHandler,IEndDragHandle
 {
 
     [SerializeField] Transform dragLayer;
-    public List<GameObject> hovering;
+    [SerializeField] WeaponType type;
     private Transform startPos;
-    private CanvasGroup group;
+    public bool InWeaponSlot = false;
+    public CanvasGroup group;
+
     void Start()
     {
         group = GetComponent<CanvasGroup>();
@@ -31,14 +33,9 @@ public class WeaponDraggableUI : MonoBehaviour, IBeginDragHandler,IEndDragHandle
     }
 
     public void OnEndDrag(PointerEventData eventData)
-    {
-        if(eventData.hovered.Count == 0) { GoToLastPos(); }
+    {     
+        GoToLastPos();
         group.blocksRaycasts = true;
-        if (startPos.gameObject.GetComponent<InventorySlot>() && !eventData.pointerEnter.gameObject.GetComponent<WeaponDraggableUI>())
-        {
-
-            startPos.gameObject.SetActive(false);
-        }
     }
 
     public Transform GetLastPos()
@@ -50,6 +47,11 @@ public class WeaponDraggableUI : MonoBehaviour, IBeginDragHandler,IEndDragHandle
     {
         transform.position = startPos.position;
         transform.SetParent(startPos);
+    }
+
+    public WeaponType GetWeaponType()
+    {
+        return type;
     }
 
 }

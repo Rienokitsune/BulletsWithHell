@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventoryManager : MonoBehaviour
+public class ShopSlot : MonoBehaviour
 {
-
-   
-
+    
 }
