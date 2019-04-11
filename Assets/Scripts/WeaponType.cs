@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class WeaponType : ScriptableObject
 {
-    [SerializeField] PlayerBulletBehaviour BulletBehaviour;
+    [SerializeField] public GameObject WeaponPrefab;
     [SerializeField] public Sprite WeaponSprite;
 }

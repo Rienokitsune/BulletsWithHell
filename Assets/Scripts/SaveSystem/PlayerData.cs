@@ -27,19 +27,10 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
             level += 1;
         }
     }
-    [System.Serializable]
-    public class WeaponSlotData
-    {
-        public int slotID;
-        [SerializeField] public GameObject WeaponPrefab;
+    
 
-        public void SetWeaponSlot(GameObject Weapon)
-        {
-            WeaponPrefab = Weapon;
-        }
-    }
-
-    [SerializeField]public PlayerUpgradeData[] playerUpgrades;
+    [SerializeField] public PlayerUpgradeData[] playerUpgrades;
+    [SerializeField] public List<WeaponType> slots;
     [SerializeField] int Sp;
 
     public int GetLevel(UpgradeTypes.UpgradeType type)
@@ -107,7 +98,7 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
     }
 
     [Button]
-    void Add1000Sp()
+    public void Add1000Sp()
     {
         Sp += 1000;
     }
