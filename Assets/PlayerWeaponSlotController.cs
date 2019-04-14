@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWeaponSlotController : MonoBehaviour
 {
-    [SerializeField] PlayerData data;
+    [SerializeField] PlayerLoadout loadout;
     [SerializeField] GameObject[] weaponSlots;
     int activeSlots;
     float slotRotationAngle;
@@ -15,13 +15,13 @@ public class PlayerWeaponSlotController : MonoBehaviour
 
     public void ReloadWeapons()
     {
-        activeSlots = data.slots.Count;
+
+        activeSlots = PlayerData._PlayerData.GetLevel(UpgradeTypes.UpgradeType.BulletNum);
         slotRotationAngle = 360 / activeSlots;
-        for (int i = 0; i < activeSlots; i++)
+        for (int i = 0; i <= activeSlots-1; i++)
         {
             weaponSlots[i].SetActive(true);
-           // Destroy(weaponSlots[i].transform.GetChild(0));
-            GameObject obj = Instantiate(data.slots[i].WeaponPrefab, weaponSlots[i].transform);
+            GameObject obj = Instantiate(loadout.GetWeaponType(loadout.currentLoadout[i]).WeaponPrefab, weaponSlots[i].transform);
             obj.transform.Rotate(new Vector3(0, 0, slotRotationAngle * i));
         }
     }

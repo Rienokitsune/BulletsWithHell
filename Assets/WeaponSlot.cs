@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class WeaponSlot : MonoBehaviour,IDropHandler
 {
+
     [SerializeField] UnityEvent weaponChanged;
     [SerializeField] WeaponType type;
     [SerializeField] Image weaponSprite;
@@ -20,15 +21,15 @@ public class WeaponSlot : MonoBehaviour,IDropHandler
         weaponChanged.Invoke();
     }
 
-   public WeaponType GetWeapon()
+   public PlayerLoadout.WeaponTypes GetWeaponType()
     {
-        return type;
+        return type.type;
     }
 
-    public void SetWeapon(WeaponType type)
+    public void SetWeapon(PlayerLoadout.WeaponTypes type)
     {
-        this.type = type;
-        weaponSprite.sprite = type.WeaponSprite;
+        this.type = PlayerLoadout._Loadout.GetWeaponType(type);
+        
     }
       
 }

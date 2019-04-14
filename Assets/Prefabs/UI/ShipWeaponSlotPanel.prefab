@@ -85,7 +85,6 @@ GameObject:
   - component: {fileID: 969637322964220460}
   - component: {fileID: 969637322964220463}
   - component: {fileID: 969637322964220462}
-  - component: {fileID: 969637322964220461}
   m_Layer: 0
   m_Name: ShopSlot (1)
   m_TagString: Untagged
@@ -150,18 +149,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &969637322964220461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969637322964220451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98ef74436c6c7547b7935577df311a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969637323016900969
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +726,6 @@ GameObject:
   - component: {fileID: 969637323318303230}
   - component: {fileID: 969637323318303225}
   - component: {fileID: 969637323318303224}
-  - component: {fileID: 969637323318303231}
   m_Layer: 0
   m_Name: ShopSlot (3)
   m_TagString: Untagged
@@ -804,18 +790,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &969637323318303231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969637323318303229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98ef74436c6c7547b7935577df311a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969637323458267725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1130,6 @@ GameObject:
   - component: {fileID: 969637324022322813}
   - component: {fileID: 969637324022322808}
   - component: {fileID: 969637324022322815}
-  - component: {fileID: 969637324022322814}
   m_Layer: 0
   m_Name: ShopSlot (2)
   m_TagString: Untagged
@@ -1221,18 +1194,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &969637324022322814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969637324022322812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98ef74436c6c7547b7935577df311a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969637324111535715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1346,6 @@ GameObject:
   - component: {fileID: 969637324562887101}
   - component: {fileID: 969637324562887096}
   - component: {fileID: 969637324562887103}
-  - component: {fileID: 969637324562887102}
   m_Layer: 0
   m_Name: ShopSlot
   m_TagString: Untagged
@@ -1450,18 +1410,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &969637324562887102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969637324562887100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98ef74436c6c7547b7935577df311a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969637324622921268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1843,7 @@ GameObject:
   - component: {fileID: 4072025858080085058}
   - component: {fileID: 4072025858080085056}
   - component: {fileID: 4072025858080085057}
+  - component: {fileID: 1598700777}
   m_Layer: 0
   m_Name: ShipWeaponSlotPanel
   m_TagString: Untagged
@@ -1944,14 +1893,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43fafe4f7dc664419fa017b5fb77fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultWeapon: {fileID: 11400000, guid: 884d8dafa3a7def41bea8589922d0ab9, type: 2}
   data: {fileID: 11400000, guid: c82c3de3cb093fd4096076a41c2d81a3, type: 2}
+  loadout: {fileID: 11400000, guid: e246473e6d2b17c438795bc6195be81b, type: 2}
   slots:
   - {fileID: 969637323843320846}
   - {fileID: 969637323458267721}
   - {fileID: 969637324343824005}
   - {fileID: 969637324658286432}
   - {fileID: 969637323198455346}
-  equipped: []
+  equipped: 
 --- !u!114 &4072025858080085057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1968,6 +1919,46 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 4072025858080085056}
+        m_MethodName: ReloadEquipped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1598700777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072025858080085062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbefac8cf2f877445a12795cc923fba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 0cc47fa08fb921347bdfa8f22dcc1d8a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4072025858080085056}
+        m_MethodName: LoadSlots
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4072025858080085056}
         m_MethodName: ReloadEquipped
         m_Mode: 1

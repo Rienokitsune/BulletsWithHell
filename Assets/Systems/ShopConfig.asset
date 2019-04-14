@@ -46,11 +46,11 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   data: {fileID: 11400000, guid: c82c3de3cb093fd4096076a41c2d81a3, type: 2}
   upgrades:
-  - currentLevel: 5
+  - currentLevel: 1
     maxLevel: 5
     upgradeType: 0
     cost: 0a0000001400000050000000c8000000f4010000
-  - currentLevel: 3
+  - currentLevel: 1
     maxLevel: 5
     upgradeType: 1
     cost: 0a0000001400000050000000c8000000f4010000
@@ -62,7 +62,7 @@ MonoBehaviour:
     maxLevel: 5
     upgradeType: 3
     cost: 0a0000001400000050000000c8000000f4010000
-  - currentLevel: 5
+  - currentLevel: 1
     maxLevel: 5
     upgradeType: 4
     cost: 0a0000001400000050000000c8000000f4010000

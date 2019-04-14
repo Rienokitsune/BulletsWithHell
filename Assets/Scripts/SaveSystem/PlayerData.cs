@@ -29,9 +29,13 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
     }
     
 
-    [SerializeField] public PlayerUpgradeData[] playerUpgrades;
-    [SerializeField] public List<WeaponType> slots;
+    [SerializeField] public PlayerUpgradeData[] playerUpgrades;    
     [SerializeField] int Sp;
+
+    private void OnEnable()
+    {
+        _PlayerData = this;        
+    }
 
     public int GetLevel(UpgradeTypes.UpgradeType type)
     {
@@ -66,6 +70,7 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
             {
                 data.LoadDefault();
             }
+           
             Sp = 0;
             ES3.Save<PlayerData>("PlayerData", this, "SaveData");
             Debug.Log("SaveData File Not found, PlayerData key created and loaded default values");
@@ -92,10 +97,6 @@ public class PlayerData : ScriptableObject, ISaveData,ILoadData
         Sp -= cost;
     }
 
-    private void OnEnable()
-    {
-        _PlayerData = this;        
-    }
 
     [Button]
     public void Add1000Sp()

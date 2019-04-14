@@ -43,7 +43,7 @@ public class PathMoverSimple : PathMover
         }
     }
 
-    private void OnDrawGizmos()
+  /*  private void OnDrawGizmos()
     {
         Vector2 lastPos = waypoints[0];
         Gizmos.color = Color.white;
@@ -54,7 +54,7 @@ public class PathMoverSimple : PathMover
             Gizmos.DrawSphere(v2, 0.1f);
         }
         
-    }
+    }*/
 
     public void SetSpeed(float speed)
     {

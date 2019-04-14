@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a01350becab294aa66c946df1053ce, type: 3}
   m_Name: Hex
   m_EditorClassIdentifier: 
+  type: 3
   WeaponPrefab: {fileID: 5674468975235050145, guid: 12b02da24f7814e4d81b0931409b81ec,
     type: 3}
   WeaponSprite: {fileID: 21300000, guid: 088dfd6ded40277419b76a897dcf8eeb, type: 3}

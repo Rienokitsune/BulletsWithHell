@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveables:
   - {fileID: 11400000, guid: c82c3de3cb093fd4096076a41c2d81a3, type: 2}
+  - {fileID: 11400000, guid: e246473e6d2b17c438795bc6195be81b, type: 2}
   LevelSaves:
   - {fileID: 114947537310485192, guid: 1bf4da61cee5ddc42b962291c99f6f4f, type: 2}
   - {fileID: 114449891030967522, guid: 16f94d85434daa34695789342159398f, type: 2}

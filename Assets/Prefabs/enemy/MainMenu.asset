@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2947367005a42fb459a557662991457d, type: 3}
+  m_Name: MainMenu
+  m_EditorClassIdentifier: 
+  shotDelaySequence:
+  - 0.567
+  - 0.585
+  - 0.548
+  - 0.548
+  - 0.35
+  - 1.569
+  config: {fileID: 11400000, guid: 14945c0d8f1d074488ecca0869c92dfd, type: 2}
+  coneAngle: 360
+  numOfBullets: 6
+  rotationSpeed: 500

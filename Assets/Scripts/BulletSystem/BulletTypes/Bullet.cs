@@ -20,7 +20,7 @@ public abstract class Bullet : MonoBehaviour
         Timer = 0;
     }
 
-    public abstract void Update();
+    public abstract void FixedUpdate();
 
     public void Hit()
     {

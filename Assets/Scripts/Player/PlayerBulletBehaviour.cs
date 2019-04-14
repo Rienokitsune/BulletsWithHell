@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 public class PlayerBulletBehaviour : ScriptableObject
 { 
     [SerializeField] public PlayerData data;
-    [SerializeField] BulletConfig config;
+    [SerializeField] BulletSourceConfig config;
     [SerializeField] [Range(0, 360)] int coneAngle;
     [Range(1, 20)]
     [SerializeField] int numOfBullets;
@@ -34,15 +34,15 @@ public class PlayerBulletBehaviour : ScriptableObject
 
             laser.transform.position = source.position;
             laser.transform.rotation = Quaternion.Euler(0, 0, ((i - numOfBullets / 2) * pRotationAngle) + offsetZ);
-            laser.GetComponent<PlayerBullet>().speedOverTime = config.SpeedCurve;
+            laser.GetComponent<PlayerBullet>().speedOverTime = config.BulletSpeed;
             laser.GetComponent<PlayerBullet>().SetDamage(Damage);
 
         }
     }
 
-    public GameObject getPooledBullet(int ID)
+    public GameObject getPooledBullet(string ID)
     {
-        return BulletPooler.pooler.getPooledObject(config.Pool_ID.ToString()); ;
+        return BulletPooler.pooler.getPooledObject(config.Pool_ID); ;
     }
 
     public Transform GetTransform(GameObject obj)

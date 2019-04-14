@@ -7,7 +7,7 @@ public class PlayerBullet : Bullet
 
     public int damage;
 
-    public override void Update()
+    public override void FixedUpdate()
     {
 
         Timer += Time.deltaTime;

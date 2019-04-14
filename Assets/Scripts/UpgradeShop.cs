@@ -44,10 +44,11 @@ public class UpgradeShop : ScriptableObject, ILoadData
                 }
                 else
                 {
-                    UpgradeBought.Invoke();
+                    
                     upgrade.levelUP();
                     Load();
                     data.SubtractSP(cost);
+                    UpgradeBought.Invoke();
                 }
                 
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletGeneric : Bullet
 {
-    public override void Update()
+    public override void FixedUpdate()
     {
         
             Timer += Time.deltaTime;

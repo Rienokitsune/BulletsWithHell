@@ -16,6 +16,7 @@ public class PlayerBulletSource : MonoBehaviour
         behaviour.GetTransform(this.gameObject);
         ShotDelay = behaviour.shotDelayAtLevel[behaviour.data.GetLevel(UpgradeTypes.UpgradeType.FireRate)];
         Timer = ShotDelay;
+        StartCoroutine(CountDownAndShoot());
 
     }
 
@@ -24,21 +25,19 @@ public class PlayerBulletSource : MonoBehaviour
         ShotDelay = behaviour.shotDelayAtLevel[behaviour.data.GetLevel(UpgradeTypes.UpgradeType.FireRate)];
     }
 
-    void Update()
+    public IEnumerator CountDownAndShoot()
     {
-        CountDownAndShoot();
-    }
-
-
-    private void CountDownAndShoot()
-    {
-        Timer -= Time.deltaTime;
-        if (Timer <= 0)
+        while (true)
         {
             behaviour.Fire(gameObject.transform);
             BulletSourceEvent.Invoke();
             Timer = ShotDelay;
+
+            yield return new WaitForSeconds(Timer);
         }
+
     }
+
+
 
 }

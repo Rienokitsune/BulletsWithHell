@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ES3Types
 {
-	[ES3PropertiesAttribute("playerUpgrades", "slots", "Sp")]
+	[ES3PropertiesAttribute("playerUpgrades", "Sp")]
 	public class ES3Type_PlayerData : ES3ScriptableObjectType
 	{
 		public static ES3Type Instance = null;
@@ -15,7 +15,6 @@ namespace ES3Types
 			var instance = (PlayerData)obj;
 			
 			writer.WriteProperty("playerUpgrades", instance.playerUpgrades, ES3Type_PlayerUpgradeDataArray.Instance);
-			writer.WriteProperty("slots", instance.slots);
 			writer.WritePrivateField("Sp", instance);
 		}
 
@@ -29,9 +28,6 @@ namespace ES3Types
 					
 					case "playerUpgrades":
 						instance.playerUpgrades = reader.Read<PlayerData.PlayerUpgradeData[]>(ES3Type_PlayerUpgradeDataArray.Instance);
-						break;
-					case "slots":
-						instance.slots = reader.Read<System.Collections.Generic.List<WeaponType>>();
 						break;
 					case "Sp":
 					reader.SetPrivateField("Sp", reader.Read<System.Int32>(), instance);

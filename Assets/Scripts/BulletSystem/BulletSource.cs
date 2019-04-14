@@ -1,49 +1,56 @@
 ﻿using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BulletSource : MonoBehaviour
 {
-     
-    [SerializeField]public BulletBehaviour behaviour;
-    [SerializeField] UnityEvent BulletSourceEvent;
+    
+    [SerializeField]BulletSourceConfig config;
+    [SerializeField]UnityEvent BulletSourceEvent;
+    private BulletPooler pooler;
     private float Timer;
-    private int positionInShotSequence;
+
    
     void Start()
     {
-
-        behaviour.GetTransform(this.gameObject);
-        Timer = behaviour.shotDelaySequence[0];
-        positionInShotSequence = 0;
-        
+        pooler = BulletPooler.pooler;
+        StartCoroutine(CountDownAndShoot());       
     }
+ 
 
-    
-
-    void Update()
+    public IEnumerator CountDownAndShoot()
     {
-        CountDownAndShoot();
-    }
-
-
-    private void CountDownAndShoot()
-    {
-        Timer -= Time.deltaTime;
-        if (Timer <= 0)
+        Timer = Random.value;
+        while (true)
         {
-            behaviour.Fire(gameObject.transform);
+            yield return new WaitForSeconds(Timer);
+            Fire(gameObject.transform);
             BulletSourceEvent.Invoke();
-            if (positionInShotSequence == behaviour.shotDelaySequence.Length - 1)
-            {
-                positionInShotSequence = 0;
-            }
-            else
-            {
-                positionInShotSequence++;
-            }
+            Timer = config.ShotDelay.Evaluate(Time.time);
+           // Debug.Log(Timer);
+            
+        }
+            
+    }
 
-            Timer = behaviour.shotDelaySequence[positionInShotSequence];
+    public void Fire(Transform source)
+    {
+
+       
+        int numOfBullets =(int)config.NumOfBullets.Evaluate(Time.time);
+        float pRotationAngle = config.coneAngle / numOfBullets;
+        float currentOffset = config.RotationSpeed.Evaluate(Time.time);
+        for (int i = 0; i < numOfBullets; i++)
+        {
+
+
+            GameObject laser = pooler.getPooledObject(config.Pool_ID);
+            laser.SetActive(true);
+
+            laser.transform.position = source.position;
+            laser.transform.rotation = Quaternion.Euler(0, 0, ((i - numOfBullets / 2) * pRotationAngle) + config.offsetZ + currentOffset);
+            laser.GetComponent<Bullet>().speedOverTime = config.BulletSpeed;
 
         }
     }

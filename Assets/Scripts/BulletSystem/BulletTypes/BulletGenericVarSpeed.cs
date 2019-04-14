@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletGenericVarSpeed : Bullet
 {
-    public override void Update()
+    public override void FixedUpdate()
     {
 
         Timer += Time.deltaTime;
