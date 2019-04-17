@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601dac9b8bbb5b64db1f7246832306ff, type: 3}
   m_Name: HexagonEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 500
   speed: 3
   score: 300

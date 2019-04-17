@@ -28,7 +28,7 @@ public class WeaponSlot : MonoBehaviour,IDropHandler
 
     public void SetWeapon(PlayerLoadout.WeaponTypes type)
     {
-        this.type = PlayerLoadout._Loadout.GetWeaponType(type);
+        this.type = PlayerLoadout._Loadout.GetWeaponType(PlayerWeaponList._List, type);
         
     }
       

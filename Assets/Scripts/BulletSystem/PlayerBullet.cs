@@ -10,7 +10,7 @@ public class PlayerBullet : Bullet
     public override void FixedUpdate()
     {
 
-        Timer += Time.deltaTime;
+       // Timer += Time.deltaTime;
         rb.velocity = -transform.up * speedOverTime.Evaluate(time: 0);
 
     }

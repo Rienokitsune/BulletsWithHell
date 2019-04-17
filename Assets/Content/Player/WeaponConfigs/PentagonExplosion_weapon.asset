@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58bfa1f6a76c2624f92b7f9b62ea8ff7, type: 3}
-  m_Name: Square_weapon
+  m_Name: PentagonExplosion_weapon
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: c82c3de3cb093fd4096076a41c2d81a3, type: 2}
-  config: {fileID: 11400000, guid: 9d011e4e35a836047be9aea133d72b36, type: 2}
-  coneAngle: 59
-  numOfBullets: 3
-  offsetZ: -180
-  damageAtLevel: 05000000070000000c0000000f000000190000000c000000
-  shotDelayAtLevel:
-  - 0.502
-  - 0.41
-  - 0.346
-  - 0.272
-  - 0.217
-  - 0.161
+  config: {fileID: 11400000, guid: 1b3613f10e8a58e42ba4977714d6a404, type: 2}
+  coneAngle: 360
+  numOfBullets: 9
+  offsetZ: 0
+  damageAtLevel: 
+  shotDelayAtLevel: []

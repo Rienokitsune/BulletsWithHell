@@ -22,7 +22,7 @@ public abstract class Bullet : MonoBehaviour
 
     public abstract void FixedUpdate();
 
-    public void Hit()
+    public virtual void Hit()
     {
         BulletPooler.pooler.poolDictionary[ID].Enqueue(gameObject);
         gameObject.SetActive(false);

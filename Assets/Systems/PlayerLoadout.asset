@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adede1439b1fdb74791ecd4467838e21, type: 3}
   m_Name: PlayerLoadout
   m_EditorClassIdentifier: 
-  currentLoadout: 0000000000000000000000000000000000000000
+  currentLoadout: 0100000001000000010000000100000001000000

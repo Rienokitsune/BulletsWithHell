@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerWeaponSlotController : MonoBehaviour
 {
     [SerializeField] PlayerLoadout loadout;
+    [SerializeField] PlayerWeaponList list;
     [SerializeField] GameObject[] weaponSlots;
     int activeSlots;
     float slotRotationAngle;
@@ -21,7 +22,7 @@ public class PlayerWeaponSlotController : MonoBehaviour
         for (int i = 0; i <= activeSlots-1; i++)
         {
             weaponSlots[i].SetActive(true);
-            GameObject obj = Instantiate(loadout.GetWeaponType(loadout.currentLoadout[i]).WeaponPrefab, weaponSlots[i].transform);
+            GameObject obj = Instantiate(loadout.GetWeapon(list,loadout.currentLoadout[i]), weaponSlots[i].transform);
             obj.transform.Rotate(new Vector3(0, 0, slotRotationAngle * i));
         }
     }

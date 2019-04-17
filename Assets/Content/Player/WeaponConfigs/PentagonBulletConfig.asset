@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395e4b1931f27624ca236c1cf63f3d6d, type: 3}
   m_Name: PentagonBulletConfig
   m_EditorClassIdentifier: 
-  Pool_ID: 0
+  Pool_ID: 2
   BulletSpeed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 15
+      value: 10
       inSlope: 0
       outSlope: 0
       tangentMode: 136

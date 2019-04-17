@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 public class PlayerLoadout : ScriptableObject, ISaveData,ILoadData
 {
     public static PlayerLoadout _Loadout;
-    PlayerWeaponList weaponList;
+
     public enum WeaponTypes
     {
         square,
@@ -17,9 +17,9 @@ public class PlayerLoadout : ScriptableObject, ISaveData,ILoadData
 
     [SerializeField]public WeaponTypes[] currentLoadout;
 
-    public GameObject GetWeapon(WeaponTypes type)
+    public GameObject GetWeapon(PlayerWeaponList list, WeaponTypes type)
     {
-        foreach(WeaponType weapon in weaponList.Types)
+        foreach(WeaponType weapon in list.Types)
         {
             Debug.Log(type);
             if (weapon.type == type)
@@ -29,12 +29,13 @@ public class PlayerLoadout : ScriptableObject, ISaveData,ILoadData
             }
         }
 
-        return GetWeapon(WeaponTypes.triangle);
+        return GetWeapon(list,WeaponTypes.triangle);
     }
 
-    public WeaponType GetWeaponType(WeaponTypes type)
+    public WeaponType GetWeaponType(PlayerWeaponList list, WeaponTypes type)
     {
-        foreach (WeaponType weapon in weaponList.Types)
+        
+        foreach (WeaponType weapon in list.Types)
         {
             Debug.Log(type);
             if (weapon.type == type)
@@ -43,12 +44,13 @@ public class PlayerLoadout : ScriptableObject, ISaveData,ILoadData
             }
         }
 
-        return GetWeaponType(WeaponTypes.triangle);
+        return GetWeaponType(list,WeaponTypes.triangle);
     }
 
     private void OnEnable()
     {
         _Loadout = this;
+        
     }
     
     [Button]
@@ -58,7 +60,7 @@ public class PlayerLoadout : ScriptableObject, ISaveData,ILoadData
         ES3.Save<PlayerLoadout>("PlayerLoadout", this, "SaveData");
         foreach(WeaponTypes type in currentLoadout)
         {
-            Debug.Log(GetWeapon(type) + " weapon in loadout Saved");
+           // Debug.Log(GetWeapon(type) + " weapon in loadout Saved");
         }
     }
 
@@ -86,7 +88,7 @@ public class PlayerLoadout : ScriptableObject, ISaveData,ILoadData
                 return;
             }
 
-            weaponList = PlayerWeaponList._List;      
+            //weaponList = PlayerWeaponList._List;      
 
         }
         else

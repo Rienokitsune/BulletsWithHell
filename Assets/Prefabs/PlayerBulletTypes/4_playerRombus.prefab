@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7183259018753664778}
   - component: {fileID: 8668842457034316026}
   m_Layer: 12
-  m_Name: 0_playerBullet
+  m_Name: 4_playerRombus
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   rb: {fileID: 50477881464966098}
   Timer: 0
-  ID: 0
+  ID: 4
   damage: 10
 --- !u!1 &1037016046260066588
 GameObject:
@@ -384,8 +384,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4968714625617262441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.04, z: 0}
-  m_LocalScale: {x: 0.7028741, y: 2.0812752, z: 1}
+  m_LocalPosition: {x: 0.01, y: -0.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4120547039102596}
   m_RootOrder: 1
@@ -427,8 +427,8 @@ SpriteRenderer:
   m_SortingLayerID: -1453411535
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5f3da034928d7747b6a319222e885cb, type: 3}
-  m_Color: {r: 1, g: 0.76391923, b: 0, a: 0.7058824}
+  m_Sprite: {fileID: 21300000, guid: e460d8d7bba680f47b8a1cc136627c61, type: 3}
+  m_Color: {r: 1, g: 0.76391923, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

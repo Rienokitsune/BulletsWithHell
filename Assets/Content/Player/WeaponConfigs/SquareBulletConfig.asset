@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395e4b1931f27624ca236c1cf63f3d6d, type: 3}
   m_Name: SquareBulletConfig
   m_EditorClassIdentifier: 
-  Pool_ID: 0
+  Pool_ID: 1
   BulletSpeed:
     serializedVersion: 2
     m_Curve:

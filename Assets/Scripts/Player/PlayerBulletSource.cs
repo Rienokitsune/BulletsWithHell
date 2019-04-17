@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class PlayerBulletSource : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class PlayerBulletSource : MonoBehaviour
 
     }
 
-
+    [Button]
+    public void startShooting()
+    {
+        StartCoroutine(CountDownAndShoot());
+    }
 
 }
